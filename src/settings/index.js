@@ -3,7 +3,7 @@ export default {
 };
 
 const siteConfig = {
-  siteName: 'ISOMORPHIC',
+  siteName: 'GPDR.black',
   siteIcon: 'ion-flash',
   footerText: 'Isomorphic ©2018 Created by RedQ, Inc',
 };
