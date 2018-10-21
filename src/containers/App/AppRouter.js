@@ -16,7 +16,7 @@ const routes = [
     component: asyncComponent(() => import('../AuthCheck')),
   },
   {
-    path: 'votedecrypt',
+    path: 'votedecrypt/:id',
     component: asyncComponent(() => import('../insertPrivateKey')),
   },
   {

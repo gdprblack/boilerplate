@@ -6,27 +6,26 @@ import notification from '../components/notification';
 import AuthHelper from '../helpers/authHelper';
 import Input from '../components/uielements/input';
 import Axios from 'axios';
-
+import { Redirect } from 'react-router';
 
 export default class extends Component {
   state = { submit: false, value: '' };
   handleChange = (event) => {
     console.log(event);
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
   }
 
   submitKey = () => {
     this.setState({ submit: true });
-    alert('A private key was submitted: ' + this.state.value);
-    Axios.post(`https://localhost/2/sign`,  this.state.value )
+    Axios.post("https://localhost:3000/" + this.props.match.params.id + "/sign", this.state.value)
       .then(res => {
         console.log(res);
         console.log(res.data);
-        this.props.history.push('/dashboard/decrypt');
       }).catch(err => console.log('There was an error:' + err));
-    this.setState({value:''});
+    alert('A private key was submitted: ' + this.state.value);
+    this.setState({ value: '' });
   };
-  
+
   render() {
     return (
       <LayoutContentWrapper style={{ height: '100vh' }}>
@@ -37,8 +36,7 @@ export default class extends Component {
           </div>
           <Button submit={this.state.submit.toString()} onClick={this.submitKey}>
             Submit private key
-          </Button>          
-
+          </Button>
         </LayoutContent>
       </LayoutContentWrapper>
     );
