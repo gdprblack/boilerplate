@@ -13,19 +13,7 @@ const options = [
     key: 'datalist',
     label: 'sidebar.datalist',
     leftIcon: 'ion-document',
-  },
-  {
-    key: 'votedecrypt',
-    label: 'sidebar.reqdecrypt',
-    leftIcon: 'ion-document',
-  },
-  {
-    key: 'decrypt',
-    label: 'sidebar.decrypt',
-    leftIcon: 'ion-document',
   }
-  
-  
   
 ];
 export default options;
